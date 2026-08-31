@@ -1,0 +1,304 @@
+/*
+  Dark and System-dark tokens.
+  Keep in sync with the light map in variables.css.
+*/
+
+html.teams-mode.theme-dark {
+  color-scheme: dark;
+
+  --teams-accent: #7d81db;
+  --teams-accent-hover: #9ea2ef;
+  --teams-accent-muted: #3b3d5c;
+  --teams-background: #1f1f1f;
+  --teams-sidebar: #2b2b2b;
+  --teams-rail: #1a1a1a;
+  --teams-conversation: #1f1f1f;
+  --teams-border: #3d3d3d;
+  --teams-text: #ffffff;
+  --teams-secondary-text: #c8c8c8;
+  --teams-hover: #333333;
+  --teams-active: #3b3d5c;
+  --teams-composer: #2b2b2b;
+  --teams-search: #333333;
+  --teams-bubble-out: #3b3d6b;
+  --teams-bubble-in: #2b2b2b;
+  --teams-link: #9ea2ef;
+  --teams-danger: #f1707b;
+  --teams-success: #54b054;
+  --teams-warning: #fce100;
+  --teams-read: #7da7f5;
+  --teams-dimmer: rgba(0, 0, 0, 0.55);
+  --teams-scrollbar: #5a5a5a;
+  --teams-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --teams-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  --WDS-accent: #7d81db !important;
+  --WDS-accent-rgb: 125, 129, 219 !important;
+  --WDS-accent-RGB: 125, 129, 219 !important;
+  --WDS-accent-deemphasized: #3b3d5c !important;
+  --WDS-accent-deemphasized-rgb: 59, 61, 92 !important;
+  --WDS-accent-emphasized: #9ea2ef !important;
+  --WDS-accent-emphasized-rgb: 158, 162, 239 !important;
+
+  --WDS-content-default: #ffffff !important;
+  --WDS-content-default-rgb: 255, 255, 255 !important;
+  --WDS-content-deemphasized: #c8c8c8 !important;
+  --WDS-content-deemphasized-rgb: 200, 200, 200 !important;
+  --WDS-content-disabled: rgba(255, 255, 255, 0.4) !important;
+  --WDS-content-on-accent: #ffffff !important;
+  --WDS-content-action-default: #7d81db !important;
+  --WDS-content-action-emphasized: #9ea2ef !important;
+  --WDS-content-external-link: #9ea2ef !important;
+  --WDS-content-inverse: #1f1f1f !important;
+  --WDS-content-read: #7da7f5 !important;
+
+  --WDS-secondary-negative: #f1707b !important;
+  --WDS-secondary-positive: #54b054 !important;
+  --WDS-secondary-warning: #fce100 !important;
+
+  --WDS-surface-default: #2b2b2b !important;
+  --WDS-surface-default-rgb: 43, 43, 43 !important;
+  --WDS-surface-emphasized: #1f1f1f !important;
+  --WDS-surface-elevated-default: #2b2b2b !important;
+  --WDS-surface-elevated-emphasized: #333333 !important;
+  --WDS-surface-highlight: rgba(255, 255, 255, 0.08) !important;
+  --WDS-surface-inverse: #ffffff !important;
+  --WDS-surface-pressed: rgba(255, 255, 255, 0.12) !important;
+
+  --WDS-background-wash-inset: #1f1f1f !important;
+  --WDS-background-wash-plain: #1f1f1f !important;
+  --WDS-background-elevated-wash-plain: #2b2b2b !important;
+  --WDS-background-elevated-wash-inset: #2b2b2b !important;
+  --WDS-background-dimmer: rgba(0, 0, 0, 0.55) !important;
+  --WDS-modal-backdrop-solid: #1f1f1f !important;
+  --WDS-app-wash: #1f1f1f !important;
+
+  --WDS-lines-divider: #3d3d3d !important;
+  --WDS-lines-outline-default: #525252 !important;
+  --WDS-lines-outline-deemphasized: #3d3d3d !important;
+
+  --WDS-persistent-always-branded: #7d81db !important;
+
+  --WDS-systems-bubble-surface-incoming: #2b2b2b !important;
+  --WDS-systems-bubble-surface-outgoing: #3b3d6b !important;
+  --WDS-systems-bubble-content-deemphasized: #c8c8c8 !important;
+  --WDS-systems-bubble-surface-overlay: #2b2b2b !important;
+  --WDS-systems-bubble-surface-system: #1f1f1f !important;
+
+  --WDS-systems-chat-surface-composer: #2b2b2b !important;
+  --WDS-systems-chat-background-wallpaper: #1f1f1f !important;
+  --WDS-systems-chat-foreground-wallpaper: #2b2b2b !important;
+  --WDS-systems-chat-surface-tray: #2b2b2b !important;
+
+  --WDS-components-surface-nav-bar: #1a1a1a !important;
+
+  --background-default: #2b2b2b !important;
+  --background-default-hover: #333333 !important;
+  --background-default-active: #3b3d5c !important;
+  --panel-header-background: #2b2b2b !important;
+  --panel-header-icon: #c8c8c8 !important;
+  --conversation-panel-background: #1f1f1f !important;
+  --conversation-panel-border: #3d3d3d !important;
+  --intro-background: #1f1f1f !important;
+  --search-container-background: #2b2b2b !important;
+  --search-input-background: #333333 !important;
+  --search-input-container-background: #2b2b2b !important;
+  --search-input-container-background-active: #2b2b2b !important;
+  --compose-input-background: #333333 !important;
+  --compose-input-border: #3d3d3d !important;
+  --compose-panel-background: #2b2b2b !important;
+  --rich-text-panel-background: #2b2b2b !important;
+  --incoming-background: #2b2b2b !important;
+  --incoming-background-rgb: 43, 43, 43 !important;
+  --incoming-background-deeper: #242424 !important;
+  --outgoing-background: #3b3d6b !important;
+  --outgoing-background-rgb: 59, 61, 107 !important;
+  --outgoing-background-deeper: #32345c !important;
+  --dropdown-background: #2b2b2b !important;
+  --dropdown-background-hover: #333333 !important;
+  --drawer-background: #2b2b2b !important;
+  --drawer-section-background: #1f1f1f !important;
+  --drawer-gallery-background: #1f1f1f !important;
+  --border-list: #3d3d3d !important;
+  --border-strong: #525252 !important;
+  --border-panel: #3d3d3d !important;
+  --unread-marker-background: #7d81db !important;
+  --unread-bar-background: #3b3d5c !important;
+  --icon: #c8c8c8 !important;
+  --icon-stronger: #ffffff !important;
+  --icon-fixed: #7d81db !important;
+  --icon-ack: #7da7f5 !important;
+  --primary: #7d81db !important;
+  --primary-title: #ffffff !important;
+  --primary-strong: #ffffff !important;
+  --secondary: #c8c8c8 !important;
+  --secondary-lighter: #a6a6a6 !important;
+  --secondary-stronger: #e0e0e0 !important;
+  --teal: #7d81db !important;
+  --teal-lighter: #9ea2ef !important;
+  --button-primary: #7d81db !important;
+  --button-primary-background: #7d81db !important;
+  --button-round-background: #7d81db !important;
+  --highlight: #3b3d5c !important;
+  --active-tab-marker: #7d81db !important;
+  --avatar-background: #3b3d5c !important;
+  --progress-primary: #7d81db !important;
+  --startup-background: #1f1f1f !important;
+  --splashscreen-startup-background: #1f1f1f !important;
+  --splashscreen-progress-primary: #7d81db !important;
+  --splashscreen-primary-title: #ffffff !important;
+  --app-background: #1f1f1f !important;
+  --app-background-deeper: #1a1a1a !important;
+  --modal-backdrop: rgba(0, 0, 0, 0.55) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html.teams-mode.theme-system {
+    color-scheme: dark;
+
+    --teams-accent: #7d81db;
+    --teams-accent-hover: #9ea2ef;
+    --teams-accent-muted: #3b3d5c;
+    --teams-background: #1f1f1f;
+    --teams-sidebar: #2b2b2b;
+    --teams-rail: #1a1a1a;
+    --teams-conversation: #1f1f1f;
+    --teams-border: #3d3d3d;
+    --teams-text: #ffffff;
+    --teams-secondary-text: #c8c8c8;
+    --teams-hover: #333333;
+    --teams-active: #3b3d5c;
+    --teams-composer: #2b2b2b;
+    --teams-search: #333333;
+    --teams-bubble-out: #3b3d6b;
+    --teams-bubble-in: #2b2b2b;
+    --teams-link: #9ea2ef;
+    --teams-danger: #f1707b;
+    --teams-success: #54b054;
+    --teams-warning: #fce100;
+    --teams-read: #7da7f5;
+    --teams-dimmer: rgba(0, 0, 0, 0.55);
+    --teams-scrollbar: #5a5a5a;
+    --teams-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --teams-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+    --WDS-accent: #7d81db !important;
+    --WDS-accent-rgb: 125, 129, 219 !important;
+    --WDS-accent-RGB: 125, 129, 219 !important;
+    --WDS-accent-deemphasized: #3b3d5c !important;
+    --WDS-accent-deemphasized-rgb: 59, 61, 92 !important;
+    --WDS-accent-emphasized: #9ea2ef !important;
+    --WDS-accent-emphasized-rgb: 158, 162, 239 !important;
+
+    --WDS-content-default: #ffffff !important;
+    --WDS-content-default-rgb: 255, 255, 255 !important;
+    --WDS-content-deemphasized: #c8c8c8 !important;
+    --WDS-content-deemphasized-rgb: 200, 200, 200 !important;
+    --WDS-content-disabled: rgba(255, 255, 255, 0.4) !important;
+    --WDS-content-on-accent: #ffffff !important;
+    --WDS-content-action-default: #7d81db !important;
+    --WDS-content-action-emphasized: #9ea2ef !important;
+    --WDS-content-external-link: #9ea2ef !important;
+    --WDS-content-inverse: #1f1f1f !important;
+    --WDS-content-read: #7da7f5 !important;
+
+    --WDS-secondary-negative: #f1707b !important;
+    --WDS-secondary-positive: #54b054 !important;
+    --WDS-secondary-warning: #fce100 !important;
+
+    --WDS-surface-default: #2b2b2b !important;
+    --WDS-surface-default-rgb: 43, 43, 43 !important;
+    --WDS-surface-emphasized: #1f1f1f !important;
+    --WDS-surface-elevated-default: #2b2b2b !important;
+    --WDS-surface-elevated-emphasized: #333333 !important;
+    --WDS-surface-highlight: rgba(255, 255, 255, 0.08) !important;
+    --WDS-surface-inverse: #ffffff !important;
+    --WDS-surface-pressed: rgba(255, 255, 255, 0.12) !important;
+
+    --WDS-background-wash-inset: #1f1f1f !important;
+    --WDS-background-wash-plain: #1f1f1f !important;
+    --WDS-background-elevated-wash-plain: #2b2b2b !important;
+    --WDS-background-elevated-wash-inset: #2b2b2b !important;
+    --WDS-background-dimmer: rgba(0, 0, 0, 0.55) !important;
+    --WDS-modal-backdrop-solid: #1f1f1f !important;
+    --WDS-app-wash: #1f1f1f !important;
+
+    --WDS-lines-divider: #3d3d3d !important;
+    --WDS-lines-outline-default: #525252 !important;
+    --WDS-lines-outline-deemphasized: #3d3d3d !important;
+
+    --WDS-persistent-always-branded: #7d81db !important;
+
+    --WDS-systems-bubble-surface-incoming: #2b2b2b !important;
+    --WDS-systems-bubble-surface-outgoing: #3b3d6b !important;
+    --WDS-systems-bubble-content-deemphasized: #c8c8c8 !important;
+    --WDS-systems-bubble-surface-overlay: #2b2b2b !important;
+    --WDS-systems-bubble-surface-system: #1f1f1f !important;
+
+    --WDS-systems-chat-surface-composer: #2b2b2b !important;
+    --WDS-systems-chat-background-wallpaper: #1f1f1f !important;
+    --WDS-systems-chat-foreground-wallpaper: #2b2b2b !important;
+    --WDS-systems-chat-surface-tray: #2b2b2b !important;
+
+    --WDS-components-surface-nav-bar: #1a1a1a !important;
+
+    --background-default: #2b2b2b !important;
+    --background-default-hover: #333333 !important;
+    --background-default-active: #3b3d5c !important;
+    --panel-header-background: #2b2b2b !important;
+    --panel-header-icon: #c8c8c8 !important;
+    --conversation-panel-background: #1f1f1f !important;
+    --conversation-panel-border: #3d3d3d !important;
+    --intro-background: #1f1f1f !important;
+    --search-container-background: #2b2b2b !important;
+    --search-input-background: #333333 !important;
+    --search-input-container-background: #2b2b2b !important;
+    --search-input-container-background-active: #2b2b2b !important;
+    --compose-input-background: #333333 !important;
+    --compose-input-border: #3d3d3d !important;
+    --compose-panel-background: #2b2b2b !important;
+    --rich-text-panel-background: #2b2b2b !important;
+    --incoming-background: #2b2b2b !important;
+    --incoming-background-rgb: 43, 43, 43 !important;
+    --incoming-background-deeper: #242424 !important;
+    --outgoing-background: #3b3d6b !important;
+    --outgoing-background-rgb: 59, 61, 107 !important;
+    --outgoing-background-deeper: #32345c !important;
+    --dropdown-background: #2b2b2b !important;
+    --dropdown-background-hover: #333333 !important;
+    --drawer-background: #2b2b2b !important;
+    --drawer-section-background: #1f1f1f !important;
+    --drawer-gallery-background: #1f1f1f !important;
+    --border-list: #3d3d3d !important;
+    --border-strong: #525252 !important;
+    --border-panel: #3d3d3d !important;
+    --unread-marker-background: #7d81db !important;
+    --unread-bar-background: #3b3d5c !important;
+    --icon: #c8c8c8 !important;
+    --icon-stronger: #ffffff !important;
+    --icon-fixed: #7d81db !important;
+    --icon-ack: #7da7f5 !important;
+    --primary: #7d81db !important;
+    --primary-title: #ffffff !important;
+    --primary-strong: #ffffff !important;
+    --secondary: #c8c8c8 !important;
+    --secondary-lighter: #a6a6a6 !important;
+    --secondary-stronger: #e0e0e0 !important;
+    --teal: #7d81db !important;
+    --teal-lighter: #9ea2ef !important;
+    --button-primary: #7d81db !important;
+    --button-primary-background: #7d81db !important;
+    --button-round-background: #7d81db !important;
+    --highlight: #3b3d5c !important;
+    --active-tab-marker: #7d81db !important;
+    --avatar-background: #3b3d5c !important;
+    --progress-primary: #7d81db !important;
+    --startup-background: #1f1f1f !important;
+    --splashscreen-startup-background: #1f1f1f !important;
+    --splashscreen-progress-primary: #7d81db !important;
+    --splashscreen-primary-title: #ffffff !important;
+    --app-background: #1f1f1f !important;
+    --app-background-deeper: #1a1a1a !important;
+    --modal-backdrop: rgba(0, 0, 0, 0.55) !important;
+  }
+}

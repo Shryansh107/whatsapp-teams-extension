@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WhatsApp Teams</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>WhatsApp Teams</h1>
+      <p>Make WhatsApp look like Microsoft Teams</p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <div>
+          <h2>Teams Mode</h2>
+          <p class="hint">Visual theme only. WhatsApp still works as usual.</p>
+        </div>
+        <label class="switch">
+          <input id="teams-mode" type="checkbox" role="switch" />
+          <span class="track" aria-hidden="true"></span>
+          <span class="sr-only">Enable Teams Mode</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card appearance" id="appearance">
+      <h2>Appearance</h2>
+      <fieldset>
+        <legend class="sr-only">Theme</legend>
+        <label class="choice">
+          <input type="radio" name="theme" value="light" />
+          <span>Light</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="theme" value="dark" />
+          <span>Dark</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="theme" value="system" />
+          <span>System</span>
+        </label>
+      </fieldset>
+    </section>
+
+    <footer>
+      <span>v1.0</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

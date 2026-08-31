@@ -1,0 +1,329 @@
+/*
+  Teams-inspired layout and chrome.
+
+  All rules are gated behind html.teams-mode so turning the popup off
+  restores WhatsApp's original look.
+
+  !important is used only where WhatsApp author CSS or inline styles would
+  otherwise win. Do not add margin/transform to chat rows: the list is
+  virtualized and positional CSS will break scrolling.
+*/
+
+/* Global Teams Mode */
+
+html.teams-mode,
+html.teams-mode body {
+  font-family: var(--teams-font) !important;
+  background: var(--teams-background) !important;
+  color: var(--teams-text);
+}
+
+html.teams-mode #app,
+html.teams-mode .app-wrapper-web,
+html.teams-mode .app-wrapper,
+html.teams-mode .app-wrapper-web > div,
+html.teams-mode .app-wrapper-web > .app-wrapper-web {
+  background: var(--teams-background) !important;
+  max-width: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  font-family: var(--teams-font) !important;
+}
+
+html.teams-mode :focus-visible {
+  outline: 2px solid var(--teams-accent) !important;
+  outline-offset: 2px;
+}
+
+html.teams-mode a {
+  color: var(--teams-link);
+}
+
+html.teams-mode .landing-wrapper,
+html.teams-mode .landing-wrapper-before,
+html.teams-mode .landing-window {
+  background: var(--teams-background) !important;
+  color: var(--teams-text) !important;
+}
+
+/* Navigation Rail */
+
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="status-refreshed"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="newsletter"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="community"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="settings"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="settings-refreshed"]),
+html.teams-mode nav:has([data-icon="chat"]),
+html.teams-mode [role="navigation"]:has([data-icon="chat"]) {
+  background: var(--teams-rail) !important;
+  border-inline-end: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) button,
+html.teams-mode header:has([data-icon="chat"]) [role="button"],
+html.teams-mode nav:has([data-icon="chat"]) button,
+html.teams-mode nav:has([data-icon="chat"]) [role="button"] {
+  border-radius: 8px !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) button:hover,
+html.teams-mode header:has([data-icon="chat"]) [role="button"]:hover,
+html.teams-mode nav:has([data-icon="chat"]) button:hover,
+html.teams-mode nav:has([data-icon="chat"]) [role="button"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) [aria-selected="true"],
+html.teams-mode header:has([data-icon="chat"]) [aria-current="page"],
+html.teams-mode header:has([data-icon="chat"]) [aria-pressed="true"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-selected="true"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-current="page"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-pressed="true"] {
+  background: var(--teams-active) !important;
+  color: var(--teams-accent) !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) [aria-selected="true"] [data-icon] svg,
+html.teams-mode header:has([data-icon="chat"]) [aria-current="page"] [data-icon] svg,
+html.teams-mode header:has([data-icon="chat"]) [aria-pressed="true"] [data-icon] svg {
+  color: var(--teams-accent) !important;
+}
+
+/* WhatsApp Sidebar */
+
+html.teams-mode #pane-side,
+html.teams-mode #side {
+  background: var(--teams-sidebar) !important;
+  border-inline-end: 1px solid var(--teams-border) !important;
+}
+
+html.teams-mode #pane-side header,
+html.teams-mode #side header {
+  background: var(--teams-sidebar) !important;
+  border-bottom: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+  color: var(--teams-text) !important;
+}
+
+/* Chat List */
+
+html.teams-mode #pane-side [role="listitem"],
+html.teams-mode #pane-side [role="row"] {
+  background: transparent !important;
+}
+
+html.teams-mode #pane-side [role="listitem"]:hover,
+html.teams-mode #pane-side [role="row"]:hover,
+html.teams-mode #pane-side [role="listitem"] [role="gridcell"]:hover,
+html.teams-mode #pane-side [role="row"] [role="gridcell"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode #pane-side [aria-selected="true"],
+html.teams-mode #pane-side [aria-current="page"],
+html.teams-mode #pane-side [aria-selected="true"] [role="gridcell"],
+html.teams-mode #pane-side [aria-current="page"] [role="gridcell"] {
+  background: var(--teams-active) !important;
+}
+
+html.teams-mode #pane-side [role="listitem"]::after,
+html.teams-mode #pane-side [role="row"]::after {
+  border-color: var(--teams-border) !important;
+}
+
+html.teams-mode #pane-side span[aria-label*="unread"],
+html.teams-mode #pane-side span[aria-label*="Unread"] {
+  background: var(--teams-accent) !important;
+  color: #fff !important;
+}
+
+/* Conversation Header */
+
+html.teams-mode #main {
+  background: var(--teams-conversation) !important;
+  background-image: none !important;
+}
+
+html.teams-mode #main > header {
+  background: var(--teams-sidebar) !important;
+  border-bottom: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode #main > header span[title],
+html.teams-mode #main > header [role="button"] {
+  color: var(--teams-text);
+}
+
+/* Messages */
+
+html.teams-mode #main .copyable-area,
+html.teams-mode #main [data-testid="conversation-panel-body"],
+html.teams-mode #main [role="application"] {
+  background: var(--teams-conversation) !important;
+  background-image: none !important;
+}
+
+html.teams-mode #main .copyable-area::before {
+  background-image: none !important;
+}
+
+html.teams-mode #main .focusable-list-item {
+  background: transparent !important;
+}
+
+/* Message Bubbles */
+
+html.teams-mode .message-in span[data-pre-plain-text],
+html.teams-mode .message-out span[data-pre-plain-text],
+html.teams-mode .message-in .copyable-text,
+html.teams-mode .message-out .copyable-text {
+  line-height: 1.45;
+}
+
+html.teams-mode .message-in [class*="copyable-text"] > div,
+html.teams-mode .message-out [class*="copyable-text"] > div {
+  box-shadow: var(--teams-shadow);
+}
+
+html.teams-mode span[data-icon="tail-in"],
+html.teams-mode span[data-icon="tail-out"],
+html.teams-mode span[data-icon="msg-tail-in"],
+html.teams-mode span[data-icon="msg-tail-out"] {
+  display: none !important;
+}
+
+html.teams-mode .message-out .quoted-mention,
+html.teams-mode .message-in .quoted-mention,
+html.teams-mode [role="button"][aria-label*="Quoted"],
+html.teams-mode [aria-label*="Reply"] {
+  border-radius: 4px;
+}
+
+html.teams-mode [data-icon="reaction"],
+html.teams-mode [data-icon="reactions"] {
+  border-radius: 999px;
+}
+
+/* Composer */
+
+html.teams-mode #main footer {
+  background: var(--teams-composer) !important;
+  border-top: 1px solid var(--teams-border) !important;
+}
+
+html.teams-mode #main footer [contenteditable="true"][role="textbox"] {
+  background: var(--teams-search) !important;
+  border-radius: 8px !important;
+  border: 1px solid transparent !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode #main footer [contenteditable="true"][role="textbox"]:focus {
+  border-color: var(--teams-accent) !important;
+}
+
+html.teams-mode #main footer [data-icon="send"] svg,
+html.teams-mode #main footer [data-icon="send-filled"] svg,
+html.teams-mode #main footer [data-icon="ptt"] svg {
+  color: var(--teams-accent) !important;
+}
+
+/* Buttons */
+
+html.teams-mode button,
+html.teams-mode [role="button"] {
+  font-family: var(--teams-font);
+}
+
+html.teams-mode button:hover,
+html.teams-mode [role="button"]:hover {
+  filter: none;
+}
+
+html.teams-mode [data-icon="plus"] svg,
+html.teams-mode [data-icon="attach-menu-plus"] svg {
+  color: var(--teams-secondary-text);
+}
+
+/* Search */
+
+html.teams-mode #pane-side [contenteditable="true"][role="textbox"],
+html.teams-mode #side [contenteditable="true"][role="textbox"],
+html.teams-mode [data-testid="chat-list-search"],
+html.teams-mode [aria-label*="Search"][contenteditable="true"] {
+  background: var(--teams-search) !important;
+  border-radius: 4px !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode #pane-side [contenteditable="true"][role="textbox"]:focus,
+html.teams-mode #side [contenteditable="true"][role="textbox"]:focus {
+  outline: 2px solid var(--teams-accent) !important;
+  outline-offset: 0;
+}
+
+/* Menus */
+
+html.teams-mode [role="menu"],
+html.teams-mode [role="listbox"],
+html.teams-mode [data-animate-dropdown] {
+  background: var(--teams-sidebar) !important;
+  border: 1px solid var(--teams-border) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--teams-shadow-elevated) !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode [role="menuitem"]:hover,
+html.teams-mode [role="option"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode [role="dialog"],
+html.teams-mode [aria-modal="true"] {
+  border-radius: 8px;
+}
+
+/* Scrollbars */
+
+html.teams-mode ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.teams-mode ::-webkit-scrollbar-thumb {
+  background: var(--teams-scrollbar) !important;
+  border-radius: 4px;
+}
+
+html.teams-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--teams-secondary-text) !important;
+}
+
+html.teams-mode ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+html.teams-mode ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  html.teams-mode #pane-side,
+  html.teams-mode #side {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  html.teams-mode #app,
+  html.teams-mode .app-wrapper-web {
+    min-width: 0 !important;
+  }
+}

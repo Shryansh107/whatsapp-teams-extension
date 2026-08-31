@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Teams Theme",
+  "version": "1.0.0",
+  "description": "A Teams-inspired visual theme for WhatsApp Web. Does not change WhatsApp functionality.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "action": {
+    "default_title": "WhatsApp Teams Theme",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["styles/variables.css", "styles/teams.css", "styles/dark.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
