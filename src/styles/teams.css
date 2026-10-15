@@ -1,0 +1,503 @@
+/*
+  Teams-inspired layout and chrome.
+
+  All rules are gated behind html.teams-mode so turning the popup off
+  restores WhatsApp's original look.
+
+  !important is used only where WhatsApp author CSS or inline styles would
+  otherwise win. Do not add margin/transform to chat rows: the list is
+  virtualized and positional CSS will break scrolling.
+*/
+
+/* Global Teams Mode */
+
+html.teams-mode,
+html.teams-mode body {
+  font-family: var(--teams-font) !important;
+  background-color: var(--teams-background) !important;
+}
+
+html.teams-mode #app,
+html.teams-mode .app-wrapper-web,
+html.teams-mode .app-wrapper {
+  font-family: var(--teams-font) !important;
+  background-color: var(--teams-background) !important;
+}
+
+html.teams-mode :focus-visible {
+  outline: 2px solid var(--teams-accent) !important;
+  outline-offset: 2px;
+}
+
+html.teams-mode a {
+  color: var(--teams-link);
+}
+
+html.teams-mode .landing-wrapper,
+html.teams-mode .landing-wrapper-before,
+html.teams-mode .landing-window {
+  background: var(--teams-background) !important;
+  color: var(--teams-text) !important;
+}
+
+/* Navigation Rail */
+
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="status-refreshed"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="newsletter"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="community"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="settings"]),
+html.teams-mode header:has([data-icon="chat"]):has([data-icon="settings-refreshed"]),
+html.teams-mode nav:has([data-icon="chat"]),
+html.teams-mode [role="navigation"]:has([data-icon="chat"]) {
+  background: var(--teams-rail) !important;
+  border-inline-end: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) button,
+html.teams-mode header:has([data-icon="chat"]) [role="button"],
+html.teams-mode nav:has([data-icon="chat"]) button,
+html.teams-mode nav:has([data-icon="chat"]) [role="button"] {
+  border-radius: 8px !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) button:hover,
+html.teams-mode header:has([data-icon="chat"]) [role="button"]:hover,
+html.teams-mode nav:has([data-icon="chat"]) button:hover,
+html.teams-mode nav:has([data-icon="chat"]) [role="button"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) [aria-selected="true"],
+html.teams-mode header:has([data-icon="chat"]) [aria-current="page"],
+html.teams-mode header:has([data-icon="chat"]) [aria-pressed="true"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-selected="true"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-current="page"],
+html.teams-mode nav:has([data-icon="chat"]) [aria-pressed="true"] {
+  background: var(--teams-hover) !important;
+  color: var(--teams-text) !important;
+  box-shadow: inset 3px 0 0 var(--teams-accent) !important;
+}
+
+html.teams-mode header:has([data-icon="chat"]) [aria-selected="true"] [data-icon] svg,
+html.teams-mode header:has([data-icon="chat"]) [aria-current="page"] [data-icon] svg,
+html.teams-mode header:has([data-icon="chat"]) [aria-pressed="true"] [data-icon] svg {
+  color: var(--teams-accent) !important;
+}
+
+/* WhatsApp Sidebar */
+
+html.teams-mode #pane-side,
+html.teams-mode #side {
+  background: var(--teams-sidebar) !important;
+  border-inline-end: 1px solid var(--teams-border) !important;
+}
+
+html.teams-mode #pane-side header,
+html.teams-mode #side header {
+  background: var(--teams-sidebar) !important;
+  border-bottom: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+  color: var(--teams-text) !important;
+}
+
+/* Chat List */
+
+html.teams-mode #pane-side [role="listitem"],
+html.teams-mode #pane-side [role="row"] {
+  background: transparent !important;
+}
+
+html.teams-mode #pane-side [role="listitem"]:hover,
+html.teams-mode #pane-side [role="row"]:hover,
+html.teams-mode #pane-side [role="listitem"] [role="gridcell"]:hover,
+html.teams-mode #pane-side [role="row"] [role="gridcell"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode #pane-side [aria-selected="true"],
+html.teams-mode #pane-side [aria-current="page"],
+html.teams-mode #pane-side [aria-selected="true"] [role="gridcell"],
+html.teams-mode #pane-side [aria-current="page"] [role="gridcell"] {
+  background: var(--teams-active) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode #pane-side [role="listitem"]::after,
+html.teams-mode #pane-side [role="row"]::after {
+  border-color: var(--teams-border) !important;
+}
+
+html.teams-mode #pane-side span[aria-label*="unread"],
+html.teams-mode #pane-side span[aria-label*="Unread"] {
+  background: var(--teams-accent) !important;
+  color: #fff !important;
+}
+
+/* Conversation Header */
+
+html.teams-mode #main {
+  background: var(--teams-conversation) !important;
+  background-image: none !important;
+}
+
+html.teams-mode #main > header {
+  background: var(--teams-conversation) !important;
+  border-bottom: 1px solid var(--teams-border) !important;
+  box-shadow: none !important;
+  color: var(--teams-text) !important;
+  padding-bottom: 38px !important;
+}
+
+html.teams-mode #main > header span[title],
+html.teams-mode #main > header [role="button"] {
+  color: var(--teams-text);
+}
+
+/* Messages */
+
+html.teams-mode #main .copyable-area,
+html.teams-mode #main [data-testid="conversation-panel-body"],
+html.teams-mode #main [role="application"] {
+  background: var(--teams-conversation) !important;
+  background-image: none !important;
+}
+
+html.teams-mode #main .copyable-area::before {
+  background-image: none !important;
+}
+
+html.teams-mode #main .focusable-list-item {
+  background: transparent !important;
+}
+
+/* Message Bubbles */
+
+html.teams-mode .message-in span[data-pre-plain-text],
+html.teams-mode .message-out span[data-pre-plain-text],
+html.teams-mode .message-in .copyable-text,
+html.teams-mode .message-out .copyable-text {
+  line-height: 1.45;
+}
+
+html.teams-mode #main .message-out .copyable-text,
+html.teams-mode #main .message-out [class*="copyable-text"] {
+  background-color: var(--teams-bubble-out) !important;
+}
+
+html.teams-mode #main .message-in .copyable-text,
+html.teams-mode #main .message-in [class*="copyable-text"] {
+  background-color: var(--teams-bubble-in) !important;
+}
+
+html.teams-mode #main span[data-icon="tail-in"],
+html.teams-mode #main span[data-icon="tail-out"],
+html.teams-mode #main span[data-icon="msg-tail-in"],
+html.teams-mode #main span[data-icon="msg-tail-out"] {
+  display: none !important;
+}
+
+html.teams-mode .message-out .quoted-mention,
+html.teams-mode .message-in .quoted-mention,
+html.teams-mode [role="button"][aria-label*="Quoted"],
+html.teams-mode [aria-label*="Reply"] {
+  border-radius: 4px;
+}
+
+html.teams-mode [data-icon="reaction"],
+html.teams-mode [data-icon="reactions"] {
+  border-radius: 999px;
+}
+
+/* Composer */
+
+html.teams-mode #main footer {
+  background: var(--teams-conversation) !important;
+  border-top: none !important;
+  padding: 10px 16px 14px !important;
+}
+
+html.teams-mode #main footer > div {
+  background: var(--teams-composer) !important;
+  border: 1px solid var(--teams-border) !important;
+  border-radius: 8px !important;
+}
+
+html.teams-mode #main footer [contenteditable="true"][role="textbox"] {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: var(--teams-text) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode #main footer [contenteditable="true"][role="textbox"]:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+html.teams-mode #main footer [data-icon="send"] svg,
+html.teams-mode #main footer [data-icon="send-filled"] svg,
+html.teams-mode #main footer [data-icon="ptt"] svg {
+  color: var(--teams-accent) !important;
+}
+
+/* Buttons */
+
+html.teams-mode button,
+html.teams-mode [role="button"] {
+  font-family: var(--teams-font);
+}
+
+html.teams-mode button:hover,
+html.teams-mode [role="button"]:hover {
+  filter: none;
+}
+
+html.teams-mode [data-icon="plus"] svg,
+html.teams-mode [data-icon="attach-menu-plus"] svg {
+  color: var(--teams-secondary-text);
+}
+
+/* Search */
+
+html.teams-mode #pane-side [contenteditable="true"][role="textbox"],
+html.teams-mode #side [contenteditable="true"][role="textbox"],
+html.teams-mode [data-testid="chat-list-search"],
+html.teams-mode [aria-label*="Search"][contenteditable="true"] {
+  background: var(--teams-search) !important;
+  border-radius: 4px !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode #pane-side [contenteditable="true"][role="textbox"]:focus,
+html.teams-mode #side [contenteditable="true"][role="textbox"]:focus {
+  outline: 2px solid var(--teams-accent) !important;
+  outline-offset: 0;
+}
+
+/* Menus */
+
+html.teams-mode [role="menu"],
+html.teams-mode [role="listbox"],
+html.teams-mode [data-animate-dropdown] {
+  background: var(--teams-sidebar) !important;
+  border: 1px solid var(--teams-border) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--teams-shadow-elevated) !important;
+  color: var(--teams-text) !important;
+}
+
+html.teams-mode [role="menuitem"]:hover,
+html.teams-mode [role="option"]:hover {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode [role="dialog"],
+html.teams-mode [aria-modal="true"] {
+  border-radius: 8px;
+}
+
+/* Scrollbars */
+
+html.teams-mode ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.teams-mode ::-webkit-scrollbar-thumb {
+  background: var(--teams-scrollbar) !important;
+  border-radius: 4px;
+}
+
+html.teams-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--teams-secondary-text) !important;
+}
+
+html.teams-mode ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+html.teams-mode ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html.teams-mode [data-icon="wa-wordmark-refreshed"],
+html.teams-mode [data-icon="wa-wordmark-refreshed-white"] {
+  opacity: 0 !important;
+}
+
+html.teams-mode [data-teams-hide] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+html.teams-mode [data-teams-chip-label] {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+html.teams-mode [data-teams-chip-label]::after {
+  content: attr(data-teams-chip-label);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--teams-text);
+}
+
+html.teams-mode [data-teams-chat-label] {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+html.teams-mode [data-teams-chat-label]::after {
+  content: "Chat";
+  color: var(--teams-text);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+html.teams-mode [data-teams-chip] {
+  background: transparent !important;
+  border: 1px solid var(--teams-border) !important;
+  border-radius: 999px !important;
+  color: var(--teams-text) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode [data-teams-chip="active"] {
+  background: var(--teams-hover) !important;
+}
+
+html.teams-mode [data-asset-intro-image-light="true"],
+html.teams-mode [data-asset-intro-image-dark="true"],
+html.teams-mode [data-icon="intro-md-beta-logo-light"],
+html.teams-mode [data-icon="intro-md-beta-logo-dark"] {
+  opacity: 0 !important;
+}
+
+html.teams-mode #pane-side [aria-label="All"],
+html.teams-mode #pane-side [aria-label="Unread"],
+html.teams-mode #pane-side [aria-label="Favourites"],
+html.teams-mode #pane-side [aria-label="Favorites"],
+html.teams-mode #pane-side [aria-label="Groups"] {
+  background: transparent !important;
+  border: 1px solid var(--teams-border) !important;
+  border-radius: 999px !important;
+  color: var(--teams-text) !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode #pane-side [aria-label="All"][aria-selected="true"],
+html.teams-mode #pane-side [aria-label="All"][aria-pressed="true"],
+html.teams-mode #pane-side [aria-label="Unread"][aria-selected="true"],
+html.teams-mode #pane-side [aria-label="Unread"][aria-pressed="true"],
+html.teams-mode #pane-side [aria-label="Favourites"][aria-selected="true"],
+html.teams-mode #pane-side [aria-label="Favorites"][aria-selected="true"],
+html.teams-mode #pane-side [aria-label="Groups"][aria-selected="true"] {
+  background: var(--teams-hover) !important;
+  border-color: var(--teams-border) !important;
+}
+
+html.teams-mode [aria-label="New chat"],
+html.teams-mode [aria-label="New chat"] span {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.teams-mode #pane-side [contenteditable="true"][role="textbox"],
+html.teams-mode #side [contenteditable="true"][role="textbox"] {
+  background: var(--teams-search) !important;
+  border-radius: 4px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Overlay chrome lives outside #app so React never owns it. */
+#whatsapp-teams-chrome {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483646;
+  font-family: "Segoe UI", "Segoe UI Variable", system-ui, sans-serif;
+}
+
+html:not(.teams-mode) #whatsapp-teams-chrome {
+  display: none !important;
+}
+
+#whatsapp-teams-chrome .teams-chrome-title {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 16px;
+  color: var(--teams-text, #fff);
+  background: var(--teams-sidebar, #1f1f1f);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+#whatsapp-teams-chrome .teams-chrome-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--teams-conversation, #1f1f1f);
+  border-bottom: 1px solid var(--teams-border, #3d3d3d);
+}
+
+#whatsapp-teams-chrome .teams-chrome-tab {
+  flex: 0 0 auto;
+  color: var(--teams-secondary-text, #c8c8c8);
+  font-size: 14px;
+  line-height: 48px;
+  border-bottom: 2px solid transparent;
+}
+
+#whatsapp-teams-chrome .teams-chrome-tab.is-active {
+  color: var(--teams-text, #fff);
+  border-bottom-color: var(--teams-accent, #7f85f5);
+  font-weight: 600;
+}
+
+#whatsapp-teams-chrome .teams-chrome-empty {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--teams-conversation, #1f1f1f);
+}
+
+#whatsapp-teams-chrome .teams-chrome-empty-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  text-align: center;
+  color: var(--teams-text, #fff);
+}
+
+#whatsapp-teams-chrome .teams-chrome-empty-copy strong {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#whatsapp-teams-chrome .teams-chrome-empty-copy span {
+  color: var(--teams-secondary-text, #adadad);
+  font-size: 14px;
+}
+
+#whatsapp-teams-chrome .teams-chrome-promo {
+  background: var(--teams-rail, #1a1a1a);
+}
+
+@media (max-width: 900px) {
+  html.teams-mode #pane-side,
+  html.teams-mode #side {
+    min-width: 0;
+  }
+}
+
+

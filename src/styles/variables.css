@@ -1,0 +1,167 @@
+/*
+  Light (and System-light) tokens.
+  --teams-* are the source of truth.
+  --WDS-* and legacy WhatsApp variables are remapped so WhatsApp's own
+  components pick up the theme without hashed class selectors.
+
+  !important is required: WhatsApp sets many of these on html[style].
+*/
+
+html.teams-mode,
+html.teams-mode.theme-light,
+html.teams-mode.theme-system {
+  color-scheme: light;
+
+  --teams-accent: #5b5fc7;
+  --teams-accent-hover: #4f52b2;
+  --teams-accent-muted: #e8e8f4;
+  --teams-background: #f5f5f5;
+  --teams-sidebar: #ffffff;
+  --teams-rail: #ebebeb;
+  --teams-conversation: #f5f5f5;
+  --teams-border: #e0e0e0;
+  --teams-text: #242424;
+  --teams-secondary-text: #616161;
+  --teams-hover: #f0f0f0;
+  --teams-active: #ebebeb;
+  --teams-composer: #ffffff;
+  --teams-search: #f0f0f0;
+  --teams-bubble-out: #e8e9f1;
+  --teams-bubble-in: #ffffff;
+  --teams-link: #5b5fc7;
+  --teams-danger: #c4314b;
+  --teams-success: #107c10;
+  --teams-warning: #c19c00;
+  --teams-read: #5b8def;
+  --teams-dimmer: rgba(0, 0, 0, 0.4);
+  --teams-scrollbar: #c2c2c2;
+  --teams-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --teams-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --teams-radius: 6px;
+  --teams-font: "Segoe UI", "Segoe UI Variable", system-ui, sans-serif;
+
+  /* WhatsApp Design System */
+  --WDS-accent: #5b5fc7 !important;
+  --WDS-accent-rgb: 91, 95, 199 !important;
+  --WDS-accent-RGB: 91, 95, 199 !important;
+  --WDS-accent-deemphasized: #e8e8f4 !important;
+  --WDS-accent-deemphasized-rgb: 232, 232, 244 !important;
+  --WDS-accent-emphasized: #4f52b2 !important;
+  --WDS-accent-emphasized-rgb: 79, 82, 178 !important;
+
+  --WDS-content-default: #242424 !important;
+  --WDS-content-default-rgb: 36, 36, 36 !important;
+  --WDS-content-deemphasized: #616161 !important;
+  --WDS-content-deemphasized-rgb: 97, 97, 97 !important;
+  --WDS-content-disabled: rgba(36, 36, 36, 0.45) !important;
+  --WDS-content-on-accent: #ffffff !important;
+  --WDS-content-action-default: #5b5fc7 !important;
+  --WDS-content-action-emphasized: #4f52b2 !important;
+  --WDS-content-external-link: #5b5fc7 !important;
+  --WDS-content-inverse: #ffffff !important;
+  --WDS-content-read: #5b8def !important;
+
+  --WDS-secondary-negative: #c4314b !important;
+  --WDS-secondary-positive: #107c10 !important;
+  --WDS-secondary-warning: #c19c00 !important;
+
+  --WDS-surface-default: #ffffff !important;
+  --WDS-surface-default-rgb: 255, 255, 255 !important;
+  --WDS-surface-emphasized: #f5f5f5 !important;
+  --WDS-surface-elevated-default: #ffffff !important;
+  --WDS-surface-elevated-emphasized: #f0f0f0 !important;
+  --WDS-surface-highlight: rgba(36, 36, 36, 0.08) !important;
+  --WDS-surface-inverse: #242424 !important;
+  --WDS-surface-pressed: rgba(36, 36, 36, 0.12) !important;
+
+  --WDS-background-wash-inset: #f5f5f5 !important;
+  --WDS-background-wash-plain: #f5f5f5 !important;
+  --WDS-background-elevated-wash-plain: #ffffff !important;
+  --WDS-background-elevated-wash-inset: #ffffff !important;
+  --WDS-background-dimmer: rgba(0, 0, 0, 0.4) !important;
+  --WDS-modal-backdrop-solid: #f5f5f5 !important;
+  --WDS-app-wash: #f5f5f5 !important;
+
+  --WDS-lines-divider: #e0e0e0 !important;
+  --WDS-lines-outline-default: #c8c8c8 !important;
+  --WDS-lines-outline-deemphasized: #e0e0e0 !important;
+
+  --WDS-persistent-always-branded: #5b5fc7 !important;
+  --WDS-persistent-always-black: #000000 !important;
+  --WDS-persistent-always-white: #ffffff !important;
+
+  --WDS-systems-bubble-surface-incoming: #ffffff !important;
+  --WDS-systems-bubble-surface-outgoing: #e8e9f1 !important;
+  --WDS-systems-bubble-content-deemphasized: #616161 !important;
+  --WDS-systems-bubble-surface-overlay: #ffffff !important;
+  --WDS-systems-bubble-surface-system: #f5f5f5 !important;
+
+  --WDS-systems-chat-surface-composer: #ffffff !important;
+  --WDS-systems-chat-background-wallpaper: #f5f5f5 !important;
+  --WDS-systems-chat-foreground-wallpaper: #ffffff !important;
+  --WDS-systems-chat-surface-tray: #ffffff !important;
+
+  --WDS-components-surface-nav-bar: #ebebeb !important;
+
+  --background-default: #ffffff !important;
+  --background-default-hover: #f0f0f0 !important;
+  --background-default-active: #ebebeb !important;
+  --panel-header-background: #ffffff !important;
+  --panel-header-icon: #616161 !important;
+  --conversation-header-border: #e0e0e0 !important;
+  --conversation-panel-background: #f5f5f5 !important;
+  --conversation-panel-border: #e0e0e0 !important;
+  --intro-background: #f5f5f5 !important;
+  --search-container-background: #ffffff !important;
+  --search-input-background: #f0f0f0 !important;
+  --search-input-container-background: #ffffff !important;
+  --search-input-container-background-active: #ffffff !important;
+  --compose-input-background: #f0f0f0 !important;
+  --compose-input-border: #e0e0e0 !important;
+  --compose-panel-background: #ffffff !important;
+  --rich-text-panel-background: #ffffff !important;
+  --incoming-background: #ffffff !important;
+  --incoming-background-rgb: 255, 255, 255 !important;
+  --incoming-background-deeper: #f5f5f5 !important;
+  --outgoing-background: #e8e9f1 !important;
+  --outgoing-background-rgb: 232, 233, 241 !important;
+  --outgoing-background-deeper: #d9daf7 !important;
+  --dropdown-background: #ffffff !important;
+  --dropdown-background-hover: #f0f0f0 !important;
+  --drawer-background: #ffffff !important;
+  --drawer-section-background: #f5f5f5 !important;
+  --drawer-gallery-background: #f5f5f5 !important;
+  --border-list: #e0e0e0 !important;
+  --border-strong: #c8c8c8 !important;
+  --border-panel: #e0e0e0 !important;
+  --unread-marker-background: #5b5fc7 !important;
+  --unread-bar-background: #e8e8f4 !important;
+  --icon: #616161 !important;
+  --icon-stronger: #242424 !important;
+  --icon-fixed: #5b5fc7 !important;
+  --icon-ack: #5b8def !important;
+  --primary: #5b5fc7 !important;
+  --primary-title: #242424 !important;
+  --primary-strong: #242424 !important;
+  --secondary: #616161 !important;
+  --secondary-lighter: #8a8a8a !important;
+  --secondary-stronger: #424242 !important;
+  --teal: #5b5fc7 !important;
+  --teal-lighter: #7d81db !important;
+  --button-primary: #5b5fc7 !important;
+  --button-primary-background: #5b5fc7 !important;
+  --button-round-background: transparent !important;
+  --highlight: #e8e8f4 !important;
+  --active-tab-marker: #5b5fc7 !important;
+  --avatar-background: #e8e8f4 !important;
+  --avatar-placeholder-background: #e8e8f4 !important;
+  --progress-primary: #5b5fc7 !important;
+  --startup-background: #f5f5f5 !important;
+  --splashscreen-startup-background: #f5f5f5 !important;
+  --splashscreen-progress-primary: #5b5fc7 !important;
+  --splashscreen-primary-title: #242424 !important;
+  --app-background: #f5f5f5 !important;
+  --app-background-deeper: #ebebeb !important;
+  --modal-backdrop: rgba(0, 0, 0, 0.4) !important;
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+}

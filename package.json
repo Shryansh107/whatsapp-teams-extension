@@ -1,0 +1,17 @@
+{
+  "name": "whatsapp-teams-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Teams-inspired visual theme for WhatsApp Web",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.1",
+    "esbuild": "^0.25.9",
+    "typescript": "^5.9.2"
+  }
+}
